@@ -1,1 +1,1 @@
-curl --include --request GET http://localhost:4741/workouts/2 \
+curl --include --request GET http://localhost:4741/workouts/8 \
