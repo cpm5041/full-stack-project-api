@@ -1,17 +1,22 @@
-class WorkoutsController < OpenReadController
+# class WorkoutsController < OpenReadController
+  class WorkoutsController < ProtectedController
+
   before_action :set_workout, only: [:show, :update, :destroy]
 
   # GET /workouts
   def index
-    @workouts = Workout.all
+    @workouts = current_user.workouts
     #
-    render json: @workouts
     # render json: current_user.workouts.all
+    render json: @workouts
+
+    # render json: @workouts
 
   end
 
   # GET /workouts/1
   def show
+    # render json: current_user.workouts.find(params[:id])
     render json: @workout
 
   end
@@ -43,7 +48,14 @@ class WorkoutsController < OpenReadController
 
   # DELETE /workouts/1
   def destroy
-    @workout.destroy
+    # @workout.destroy
+    #
+    # head :no_content
+    if @workout.destroy
+      render json: {id: @workout.id}
+    else
+      render json: {id: @workout.id}, status: :unprocessable_entity
+    end
   end
 
   private
@@ -55,5 +67,7 @@ class WorkoutsController < OpenReadController
     # Only allow a trusted parameter "white list" through.
     def workout_params
       params.require(:workout).permit(:shups, :squats, :burpees, :user_id)
+      # params.require(:workout).permit(:shups, :squats, :burpees)
+
     end
 end

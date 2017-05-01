@@ -1,1 +1,1 @@
-curl --include --request DELETE http://localhost:4741/workouts/11
+curl --include --request DELETE http://localhost:4741/workouts/11 --header "Authorization: Token token=BAhJIiVjMGQwMzgyMmE5N2ExMDEwYTlkZjZiOGU3MmU4ZGNjYQY6BkVG--1ce55ecc48db74f457aba736721db09638f6ae7d"

@@ -1,10 +1,10 @@
 curl --include --request PATCH http://localhost:4741/workouts/8 \
   --header "Content-Type: application/json" \
-  --header "Authorization: Token token=BAhJIiU1ZDlkYzM3MDk0MzdhYWEwZTFlMzVmZmE4MGE1M2Y0MgY6BkVG--27263fd0da2c5b5626e3cf915e2a524b826fecfb" \
+  --header "Authorization: Token token=BAhJIiVlM2I1MTdkYmFjODFiYzY4N2M4OGYwODJhNGQxYmRhMwY6BkVG--45408f34f5ffcc2bd734bd9a8dca4ec9da7e81e4" \
   --data '{
     "workout": {
-      "shups": "500",
-      "squats": "250",
-      "burpees": "100"
+      "shups": "400",
+      "squats": "50",
+      "burpees": "69"
     }
   }'
